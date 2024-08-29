@@ -1,0 +1,49 @@
+@font-face {
+  font-family: Manrope;
+  src: url(../fonts/Manrope/Manrope-VariableFont_wght.ttf);
+}
+
+// Font weights
+$fontMedium: 500;
+$fontBold: 700;
+
+// Colors variables
+$darkGrayBlue: #48556a;
+$desatDarkBlue: #6d7f97;
+$grayBlue: #9eafc2;
+$lightGrayBlue: #ecf2f8;
+
+// Mixins
+@mixin fontSet($fontSize, $fontWeight, $color) {
+  font-family: Manrope;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  color: $color;
+}
+@mixin displayFlexSet($flexDir, $justifyCont, $alignItems, $gap) {
+  display: flex;
+  flex-direction: $flexDir;
+  justify-content: $justifyCont;
+  align-items: $alignItems;
+  gap: $gap;
+}
+// General settings
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 13px;
+}
+body {
+  @include displayFlexSet(null, center, center, null);
+  height: 100vh;
+  width: 100vw;
+  padding: 0 60px;
+  background-color: $lightGrayBlue;
+
+  @media screen and (max-width: 600px) {
+    padding: 0 24px;
+  }
+}

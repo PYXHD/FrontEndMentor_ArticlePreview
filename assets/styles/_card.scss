@@ -1,0 +1,117 @@
+.card {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: clamp(300px, 100vw, 730px);
+  border-radius: 20px;
+  // overflow: hidden;
+  box-shadow: 5px 5px 10px 0 $grayBlue;
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: none;
+    grid-template-rows: 2fr 3fr;
+    min-height: 500px;
+  }
+
+  &_img {
+    background: url(../img/drawers.jpg) center/cover;
+    border-radius: 20px 0 0 20px;
+
+    @media screen and (max-width: 600px) {
+      border-radius: 20px 20px 0 0;
+    }
+  }
+
+  &_explain {
+    @include displayFlexSet(column, space-between, null, 20px);
+    padding: 30px 40px;
+    background-color: #ffffff;
+    border-radius: 0 20px 20px 0;
+
+    @media screen and (max-width: 600px) {
+      padding: 35px 30px 20px;
+      border-radius: 0 0 20px 20px;
+    }
+
+    &_title {
+      @include fontSet(1.6rem, $fontBold, $darkGrayBlue);
+    }
+    &_content {
+      @include fontSet(1rem, $fontMedium, $desatDarkBlue);
+    }
+  }
+
+  &_credits {
+    @include displayFlexSet(row, space-between, center, null);
+    position: relative;
+
+    &_leftPart {
+      @include displayFlexSet(row, space-between, center, 10px);
+
+      .profileImg {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+      }
+      .profileId {
+        @include displayFlexSet(column, space-between, null, null);
+
+        .name {
+          @include fontSet(1rem, $fontBold, $darkGrayBlue);
+        }
+        .date {
+          @include fontSet(1rem, $fontMedium, $grayBlue);
+        }
+      }
+    }
+
+    &_rightPart {
+      position: relative;
+      @include displayFlexSet(null, center, center, null);
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      background-color: $lightGrayBlue;
+
+      #shareIcon {
+        transition: 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+        &.active {
+        }
+      }
+
+      .shareBarDesktop {
+        position: absolute;
+        @include displayFlexSet(row, center, center, 20px);
+        display: none;
+        height: 55px;
+        width: 247px;
+        top: -80px;
+        border-radius: 10px;
+        background-color: $darkGrayBlue;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -30px;
+          left: 50%;
+          transform: translateX(-50%);
+          border-width: 16px;
+          border-style: solid;
+          border-color: $darkGrayBlue transparent transparent transparent;
+        }
+
+        &_share {
+          @include fontSet(1rem, $fontMedium, $grayBlue);
+          letter-spacing: 4px;
+        }
+        img {
+          height: 20px;
+        }
+      }
+    }
+  }
+}

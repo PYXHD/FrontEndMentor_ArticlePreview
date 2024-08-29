@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Article preview component</title>
+    <title>Frontend Mentor | Article preview component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
-
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
-
-  Michelle Appleton
-  28 Jun 2020
-
-  Share
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+  </head>
+  <body>
+    <main class="card">
+      <div class="card_img"></div>
+      <div class="card_explain">
+        <div class="card_explain_title">
+          Shift the overall look and feel by adding these wonderful touches to
+          furniture in your home
+        </div>
+        <div class="card_explain_content">
+          Ever been in a room and felt like something was missing ? Perhaps it
+          felt slightly bare and uninviting. I've got some simple tips to help
+          you make any room feel complete.
+        </div>
+        <div class="card_credits">
+          <div class="card_credits_leftPart">
+            <img
+              class="profileImg"
+              src="./assets/img/avatar-michelle.jpg"
+              alt="Profile picture"
+            />
+            <div class="profileId">
+              <div class="name">Michelle Appleton</div>
+              <div class="date">28 Jun 2020</div>
+            </div>
+          </div>
+          <div class="card_credits_rightPart">
+            <img
+              id="shareIcon"
+              src="./assets/img/icon-share.svg"
+              alt="Share icon"
+            />
+            <div class="shareBarDesktop" id="shareBarDesktop">
+              <div class="shareBarDesktop_share">SHARE</div>
+              <img src="./assets/img/icon-facebook.svg" alt="Facebook Icon" />
+              <img src="./assets/img/icon-twitter.svg" alt="Twitter Icon" />
+              <img src="./assets/img/icon-pinterest.svg" alt="Pinterest Icon" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
